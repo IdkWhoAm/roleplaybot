@@ -16,7 +16,7 @@ client.on('message', message => {
 	};
 	if (message.content.startsWith(':purge')) {
 		let args = message.content.split(" ")
-		if (NaN(args[1])) return;
+		if (isNaN(args[1])) return;
 		if (args[1] > 100) return;
 		message.channel.bulkDelete(args[1])
 		return
