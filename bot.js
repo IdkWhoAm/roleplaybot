@@ -10,7 +10,8 @@ client.on('message', message => {
 	if (!message.channel.name === "рп") return;
 	message.delete()
 	if (message.content.substring(0,5) == ":test") {
-		message.channel.send("${char["Ok"]} lol"
+		message.channel.send("${char["Ok"]} lol")
+	}
 });
 
 // THIS  MUST  BE  THIS  WAY
