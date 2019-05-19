@@ -1,29 +1,19 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const fs = require('fs');
-let userdata = JSON.parse(fs.readFileAsync('userData.json','utf8');
+var ida = {}
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
 	if (!message.channel.name === "рп") return;
-	var kar = false
+	if (!ida[message.author.id]) ida[message.author.id] = {}
 	if (message.content.startsWith(':char')) {
-		if (!userdata[message.author.id + message.guild.id]) userdata[message.author.id + message.guild.id] = {};
-		userdata[message.author.id + message.guild.id] = message.content.substring(5);
-		kar = true
+		ida[message.author.id].char = message.content.substring(5)
+		return
 	};
-	if (message.content.startsWith(':me')) {
-		message.channel.send(userdata[message.author.id + message.guild.id] + message.content)
-	}
-	if (!message.channel.name === "рп") return;
-	message.delete();
-	if (!userdata[message.author.id + message.guild.id]) userdata[message.author.id + message.guild.id] = {}
-	if (!userdata[message.author.id + message.guild.id].char) userdata[message.author.id] + message.guild.id].char = 'NoOne'
-	if (kar === false) {
-		message.channel.send(userdata[message.author.id + message.guild.id] + ":${message.content}")
-	}
+	if (!ida[message.author.id]) return
+	message.channel.send(message.content)
 });
 
 // THIS  MUST  BE  THIS  WAY
