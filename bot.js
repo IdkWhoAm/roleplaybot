@@ -14,7 +14,7 @@ client.on('message', message => {
 		return
 	};
 	if (message.content.startsWith(':me')) {
-		message.channel.send(ida[message.author.id].char + " " + message.content)
+		message.channel.send(ida[message.author.id].char + " " + message.content.substring(4))
 		return
 	};
 	if (!ida[message.author.id].char) return;
