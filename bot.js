@@ -6,6 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+	if (message.author.bot === true) return;
 	if (!message.channel.name === "рп") return;
 	message.delete()
 	if (!ida[message.author.id]) ida[message.author.id] = {}
