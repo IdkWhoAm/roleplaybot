@@ -19,6 +19,7 @@ client.on('message', message => {
 		if (NaN(args[1])) return;
 		if (args[1] > 100) return;
 		message.channel.bulkDelete(args[1])
+		return
 	};
 	if (message.content.startsWith(':me')) {
 		message.channel.send(ida[message.author.id].char + " " + message.content.substring(4))
