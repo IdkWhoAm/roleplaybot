@@ -11,7 +11,7 @@ client.on('message', message => {
 	message.delete()
 	if (message.content.substring(0,5) == ":test") {
 		message.channel.send("${char["Ok"]} lol"
-};
+});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
