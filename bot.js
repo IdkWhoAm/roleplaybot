@@ -25,6 +25,10 @@ client.on('message', message => {
 		message.channel.send(ida[message.author.id].char + " " + message.content.substring(4))
 		return
 	};
+	if (message.content.startsWith('..')) {
+		message.channel.send("\\" + ida[message.author.id].char + ": " + message.content.substring(3) + "\\")
+		return
+	};
 	if (!ida[message.author.id].char) return;
 	message.channel.send(ida[message.author.id].char + ": " + message.content)
 });
