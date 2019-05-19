@@ -15,8 +15,8 @@ client.on('message', message => {
 		kar = true
 	};
 	if (message.content.startsWith(':me')) {
-		message.channel.send(message.content.substring
-		
+		message.channel.send(userdata[message.author.id + message.guild.id] + message.content)
+	}
 	if (!message.channel.name === "рп") return;
 	message.delete();
 	if (!userdata[message.author.id + message.guild.id]) userdata[message.author.id + message.guild.id] = {}
