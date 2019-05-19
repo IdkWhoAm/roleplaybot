@@ -7,6 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 	if (!message.channel.name === "рп") return;
+	message.delete()
 	if (!ida[message.author.id]) ida[message.author.id] = {}
 	if (message.content.startsWith(':char')) {
 		ida[message.author.id].char = message.content.substring(5)
