@@ -12,8 +12,8 @@ client.on('message', message => {
 		ida[message.author.id].char = message.content.substring(5)
 		return
 	};
-	if (!ida[message.author.id]) return
-	message.channel.send(message.content)
+	if (!ida[message.author.id].char) return
+	message.channel.send(ida[message.author.id].char + ":" + message.content)
 });
 
 // THIS  MUST  BE  THIS  WAY
